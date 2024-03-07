@@ -1,11 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import { deleteNoteOfUser, retrieveAllNotesOfUser } from '../api/apiService';
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthProvider';
 
 const ListNotesPage = () => {
 	const [notes, setNotes] = useState();
 	const [message, setMessage] = useState();
-	const [username, setUsername] = useState('ahmet');
+
+	const { username } = useContext(AuthContext);
 
 	const navigate = useNavigate();
 
@@ -50,7 +53,6 @@ const ListNotesPage = () => {
 					<thead>
 						<tr>
 							<th>ID</th>
-							<th>Username</th>
 							<th>Content</th>
 							<th>Target Date</th>
 							<th>Is Done?</th>
@@ -62,7 +64,6 @@ const ListNotesPage = () => {
 							notes.map((note) => (
 								<tr key={note.id}>
 									<td>{note.id}</td>
-									<td>{note.username}</td>
 									<td>{note.content}</td>
 									<td>{note.targetDate}</td>
 									<td>{note.isDone ? 'Yes' : 'No'}</td>

@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import NoteForm from '../components/NoteForm';
 import { retrieveSingleNoteOfUser, updateNote } from '../api/apiService';
 import { useEffect } from 'react';
 import { useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../context/AuthProvider';
 
 const UpdateNotePage = () => {
 	const [content, setContent] = useState('');
 	const [targetDate, setTargetDate] = useState('');
 	const [isDone, setIsDone] = useState('');
-	const [username, setUsername] = useState('ahmet');
+
+	const { username } = useContext(AuthContext);
 
 	const { id } = useParams();
 	const navigate = useNavigate();

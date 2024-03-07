@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import NoteForm from '../components/NoteForm';
 import { useNavigate, useParams } from 'react-router-dom';
 import { addNote } from '../api/apiService';
+import { useContext } from 'react';
+import { AuthContext } from '../context/AuthProvider';
 
 const AddNotePage = () => {
-	const [username, setUsername] = useState('ahmet');
+	const { username } = useContext(AuthContext);
 
 	const { id } = useParams();
 	const navigate = useNavigate();

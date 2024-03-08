@@ -13,15 +13,14 @@ import RegisterPage from './pages/RegisterPage';
 
 const NotebookApp = () => {
 	return (
-		<div className="notebookApp">
+		<div className="container">
 			<AuthProvider>
 				<Router>
 					<Header />
 					<Routes>
-						<Route path="/" element={<LoginPage />} />
+						<Route path="/" element={<HomePage />} />
 						<Route path="/login" element={<LoginPage />} />
 						<Route path="/register" element={<RegisterPage />} />
-						<Route path="/home" element={<HomePage />} />
 						<Route path="/notes" element={<ListNotesPage />} />
 						<Route path="/update-note/:id" element={<UpdateNotePage />} />
 						<Route path="/add-note" element={<AddNotePage />} />

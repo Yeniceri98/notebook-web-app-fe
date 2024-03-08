@@ -1,11 +1,3 @@
-.notebookApp {
-	display: flex;
-	flex-direction: column;
-	text-align: center;
-	justify-content: center;
-	margin-top: 16px;
-}
-
 label,
 input,
 button {
@@ -13,44 +5,20 @@ button {
 	padding: 5px;
 }
 
-.errorContainer {
-	display: flex;
-	height: 100vh;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-}
-
 .successMessage {
 	color: rgb(35, 176, 63);
 	font-weight: bold;
 	margin-bottom: 16px;
+	margin-top: 16px;
+	font-size: 18px;
 }
 
 .errorMessage {
 	color: red;
 	font-weight: bold;
+	margin-top: 16px;
 	margin-bottom: 16px;
-}
-
-.loginRegisterContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	margin-top: 24px;
-}
-
-.logoutContainer {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	text-align: center;
-	margin-bottom: 16px;
-}
-
-.listTable {
-	text-align: start;
-	margin-bottom: 16px;
+	font-size: 18px;
 }
 
 .listTable thead {

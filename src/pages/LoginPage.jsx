@@ -23,7 +23,6 @@ const LoginPage = () => {
 	const getRegisteredUsers = () => {
 		retrieveRegisteredUser()
 			.then((res) => {
-				console.log(res.data);
 				setRegisteredUsers(res.data);
 			})
 			.catch((err) => console.log(err));
@@ -42,7 +41,7 @@ const LoginPage = () => {
 			(user) => user.username === username && user.password === password
 		);
 		if (isUserRegistered) {
-			navigate(`/home`);
+			navigate(`/`);
 			setIsAuthenticated(true);
 		} else {
 			console.log('Authentication Failed. Please check your credentials...');
@@ -51,7 +50,7 @@ const LoginPage = () => {
 	};
 
 	return (
-		<div className="loginRegisterContainer">
+		<div className="container">
 			{isAuthenticated === true ? (
 				<div className="successMessage">Authentication Successful</div>
 			) : (

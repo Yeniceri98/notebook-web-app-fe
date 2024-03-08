@@ -30,7 +30,7 @@ const ListNotesPage = () => {
 		deleteNoteOfUser(username, id)
 			.then(() => {
 				console.log('Deleted id: ' + id);
-				setMessage(`Note with id ${id} is deleted successfully...`);
+				setMessage(`Note is deleted successfully...`);
 				retrieveAllNotes();
 			})
 			.catch((err) => console.log(err));

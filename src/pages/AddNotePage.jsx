@@ -48,6 +48,14 @@ const AddNotePage = () => {
 		return errors;
 	};
 
-	return <NoteForm onSubmit={submitHandler} validate={validateHandler} />;
+	return (
+		<NoteForm
+			onSubmit={submitHandler}
+			validate={validateHandler}
+			content=""
+			targetDate=""
+			isDone=""
+		/>
+	);
 };
 export default AddNotePage;

@@ -11,19 +11,22 @@ const Header = () => {
 		setUsername('');
 		setPassword('');
 	};
+
 	return (
 		<header className="border-bottom border-light border-5 mb-5 p-2">
 			<div className="container">
 				<div className="row">
 					<nav className="navbar navbar-expand-sm">
+						<ul className="navbar-nav">
+							<li className="nav-item fs-5">
+								<Link className="nav-link" to="/">
+									Home
+								</Link>
+							</li>
+						</ul>
 						{isAuthenticated && (
 							<div className="collapse navbar-collapse">
 								<ul className="navbar-nav">
-									<li className="nav-item fs-5">
-										<Link className="nav-link" to="/home">
-											Home
-										</Link>
-									</li>
 									<li className="nav-item fs-5">
 										<Link className="nav-link" to="/notes">
 											Notes
@@ -42,7 +45,10 @@ const Header = () => {
 								</Link>
 							</li>
 							<li className="nav-item fs-5">
-								<Link className="nav-link" to="/" onClick={handleLoginLogoutRegister}>
+								<Link
+									className="nav-link"
+									to="/login"
+									onClick={handleLoginLogoutRegister}>
 									Login
 								</Link>
 							</li>

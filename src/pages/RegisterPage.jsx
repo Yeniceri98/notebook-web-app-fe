@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const RegisterPage = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
-	const [isSuccess, setIsSuccess] = useState(null);
+	const [registrationStatus, setRegistrationStatus] = useState('');
 
 	const navigate = useNavigate();
 
@@ -17,33 +17,43 @@ const RegisterPage = () => {
 				username: username,
 				password: password,
 			};
+
 			const response = await registerUser(user);
 
 			if (response.status === 200) {
-				setIsSuccess(true);
-				navigate('/login');
+				setRegistrationStatus('success');
 			} else {
-				setIsSuccess(false);
+				setRegistrationStatus('failed');
 			}
 		} catch (error) {
 			console.error(error);
+			setRegistrationStatus('failed');
 		} finally {
 			setUsername('');
 			setPassword('');
 		}
 	};
 
+	const renderMessage = () => {
+		if (registrationStatus === 'success') {
+			return (
+				<div className="successMessage">
+					Registration is Successful! You can login now if you want...
+				</div>
+			);
+		} else if (registrationStatus === 'failed') {
+			return (
+				<div className="errorMessage">
+					Registration is Failed! Please check your credentials...
+				</div>
+			);
+		}
+		return null;
+	};
+
 	return (
-		<div className="loginRegisterContainer">
-			{isSuccess === true ? (
-				<div className="successMessage">Registration is Successful!</div>
-			) : (
-				isSuccess === false && (
-					<div className="errorMessage">
-						Registration is Failed! Please check your credentials...
-					</div>
-				)
-			)}
+		<div className="container">
+			{renderMessage()}
 			<h2>Register</h2>
 			<div className="container">
 				<label>Username:</label>

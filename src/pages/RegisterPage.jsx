@@ -45,6 +45,9 @@ const RegisterPage = () => {
 			return (
 				<div className="errorMessage">
 					Registration is Failed! Please check your credentials...
+					<br />
+					(Username must be unique and Username & Password fields must have at least 3
+					characters)
 				</div>
 			);
 		}

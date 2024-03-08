@@ -46,6 +46,8 @@ const LoginPage = () => {
 		} else {
 			console.log('Authentication Failed. Please check your credentials...');
 			setIsAuthenticated(false);
+			setUsername('');
+			setPassword('');
 		}
 	};
 

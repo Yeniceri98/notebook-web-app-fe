@@ -83,7 +83,7 @@ const ListNotesPage = () => {
 				</table>
 				<div>
 					<button className="btn btn-success mt-5" onClick={addNoteHandler}>
-						Add New Todo
+						Add New Note
 					</button>
 				</div>
 			</div>

@@ -52,7 +52,6 @@ const ListNotesPage = () => {
 				<table className="table table-striped table-hover mt-3">
 					<thead>
 						<tr>
-							<th>ID</th>
 							<th>Content</th>
 							<th>Target Date</th>
 							<th>Is Done?</th>
@@ -63,7 +62,6 @@ const ListNotesPage = () => {
 						{notes &&
 							notes.map((note) => (
 								<tr key={note.id}>
-									<td>{note.id}</td>
 									<td>{note.content}</td>
 									<td>{note.targetDate}</td>
 									<td>{note.isDone ? 'Yes' : 'No'}</td>

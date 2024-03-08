@@ -1,13 +1,10 @@
 import { useState } from 'react';
 import { registerUser } from '../api/apiService';
-import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [registrationStatus, setRegistrationStatus] = useState('');
-
-	const navigate = useNavigate();
 
 	const handleRegister = async (e) => {
 		e.preventDefault();
